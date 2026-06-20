@@ -1,0 +1,58 @@
+// var c = 300 we will not use var as when we declare 
+// it in block scope and it is accessible outsideff
+//  the block scope as well which is not good for us
+
+let a = 300
+if(true){ // block scope
+    let a = 10
+    const b= 20
+    // console.log("Inner:", a)
+}
+
+// outside the scope is global scope
+
+
+// console.log(a)
+// console.log(b)
+
+
+function one(){
+    const username = 'rohan'
+
+    function two(){
+        const website = 'youtube'
+        console.log(username)
+    }
+    // console.log(website)
+
+    two()
+}
+
+// one()
+
+if(true){
+    const username = 'rohan'
+    if(username === 'rohan'){
+        const website = ' youtube'
+        // console.log(username + website)
+    }
+    // console.log(website) // error
+}
+
+// console.log(username) // error
+
+// +++++++++++++++++++ interseting ++++++++++++++++++++
+
+console.log(addOne(5))
+
+function addOne(num){
+    return num + 1
+}
+
+
+addTwo(5) // error because of hoisting
+
+const addTwo = function(num){  // this is more to say as expression 
+    return num + 2
+}
+
